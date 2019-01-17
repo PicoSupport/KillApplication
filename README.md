@@ -11,10 +11,13 @@ android.name="com.picovr.killapplication.MainActivity"
 ```
 
 ## Permission  
-add sharedUserId property in manifest 
+Add shardUserId property: 
+
 ```
 android:sharedUserId="android.uid.system"
 ```
+
+![](https://github.com/PicoSupport/LauncherWebVR/blob/master/01.png)
 
 ## Interface  
 ```
