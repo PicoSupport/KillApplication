@@ -23,19 +23,16 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
-
-    public void killapp() {
+    public void killapp(String pkgName) {
         ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> mRunningProcess = am.getRunningAppProcesses();
         Log.e(TAG, mRunningProcess.size() + " ");
         for (ActivityManager.RunningAppProcessInfo amProcess : mRunningProcess) {
             Log.e(TAG, amProcess.processName);
             Log.e(TAG, "pid:" + amProcess.pid);
-            if (amProcess.processName.equals(PACKAGENAME)) {
+            if (amProcess.processName.equals(pkgName)) {
                 pid = amProcess.pid;
                 break;
             }
@@ -47,7 +44,7 @@ public class MainActivity extends Activity {
 
     }
     public void killAPPClick(View view){
-        killapp();
+        killapp(PACKAGENAME);
     }
 
     public static void setSystemProperties(String key, String value) {
