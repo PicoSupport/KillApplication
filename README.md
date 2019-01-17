@@ -11,7 +11,7 @@ android.name="com.picovr.killapplication.MainActivity"
 ```
 
 ## Permission  
-add in manifest node.
+add sharedUserId property in manifest 
 ```
 android:sharedUserId="android.uid.system"
 ```
