@@ -1,11 +1,19 @@
 # Killing Specific Process Introduction
 
-Note: Regarding JAR file creation and usage, please refer to [the Guideline](https://github.com/picoxr/support/blob/master/How_to_use_JAR_file_in_Unity_project_on_Pico_device.docx)
+Note: Regarding java package creation and usage, please refer to [the Guideline](https://github.com/picoxr/support/blob/master/How_to_use_JAR_file_in_Unity_project_on_Pico_device.docx)
 
-1.After installing apk, run apk
+## Introduction  
+This demo shows how to kill a specific process
 
-2.Enter the name of the package you want to kill and click the kill process button
+## Class Name  
+android.name="com.picovr.killapplication.MainActivity"
 
-3.Programs that run in the background are shut down
+## Permission  
+add``android:sharedUserId="android.uid.system"``in manifest node.
+
+## Interface  
+```
+void killapp(String pkgName)
+```
 
 
