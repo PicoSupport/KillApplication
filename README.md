@@ -6,7 +6,9 @@ Note: Regarding java package creation and usage, please refer to [the Guideline]
 This demo shows how to kill a specific process
 
 ## Class Name  
+```
 android.name="com.picovr.killapplication.MainActivity"
+```
 
 ## Permission  
 add``android:sharedUserId="android.uid.system"``in manifest node.
