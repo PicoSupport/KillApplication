@@ -17,7 +17,7 @@ Add shardUserId property:
 android:sharedUserId="android.uid.system"
 ```
 
-![](https://github.com/PicoSupport/LauncherWebVR/blob/master/01.png)
+![](https://github.com/picoxr/LauncherWebVR/blob/master/01.png)
 
 ## Interface  
 ```
