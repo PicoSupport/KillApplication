@@ -1,4 +1,4 @@
-# Killing Process Introduction
+# Killing Specific Process Introduction
 
 Note: Regarding JAR file creation and usage, please refer to [the Guideline](https://github.com/PicoSupport/PicoSupport/blob/master/How_to_use_JAR_file_in_Unity_project_on_Pico_device.docx)
 
