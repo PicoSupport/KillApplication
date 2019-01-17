@@ -28,25 +28,26 @@ public class MainActivity extends Activity {
     }
 
 
-    public void killAPPClick(View view){
-
-        ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+    public void killapp() {
+        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> mRunningProcess = am.getRunningAppProcesses();
         Log.e(TAG, mRunningProcess.size() + " ");
-        for (ActivityManager.RunningAppProcessInfo amProcess : mRunningProcess){
+        for (ActivityManager.RunningAppProcessInfo amProcess : mRunningProcess) {
             Log.e(TAG, amProcess.processName);
-            Log.e(TAG, "pid:" + amProcess.pid );
-            if(amProcess.processName.equals(PACKAGENAME)){
-                pid=amProcess.pid;
+            Log.e(TAG, "pid:" + amProcess.pid);
+            if (amProcess.processName.equals(PACKAGENAME)) {
+                pid = amProcess.pid;
                 break;
             }
         }
 
-        Log.e(TAG, "picovr.factorytest.cmd"+"kill " + pid);
+        Log.e(TAG, "picovr.factorytest.cmd" + "kill " + pid);
 
-        setSystemProperties("picovr.factorytest.cmd","kill " + pid);
+        setSystemProperties("picovr.factorytest.cmd", "kill " + pid);
 
-
+    }
+    public void killAPPClick(View view){
+        killapp();
     }
 
     public static void setSystemProperties(String key, String value) {
