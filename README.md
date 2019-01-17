@@ -12,7 +12,9 @@ android.name="com.picovr.killapplication.MainActivity"
 
 ## Permission  
 add in manifest node.
-``android:sharedUserId="android.uid.system"``
+```
+android:sharedUserId="android.uid.system"
+```
 
 ## Interface  
 ```
