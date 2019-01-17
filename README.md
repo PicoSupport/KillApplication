@@ -16,4 +16,7 @@ add``android:sharedUserId="android.uid.system"``in manifest node.
 void killapp(String pkgName)
 ```
 
+## Note
+This demo requires system signature. About how to sign a apk, you can refer to this [file](https://github.com/picoxr/support/blob/master/Customize%20Launcher%20on%20Pico%20Device.docx?raw=true).
+
 
