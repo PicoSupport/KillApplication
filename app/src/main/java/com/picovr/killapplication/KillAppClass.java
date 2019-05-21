@@ -1,37 +1,26 @@
 package com.picovr.killapplication;
 
+import android.app.ActivityManager;
+import android.content.Context;
+import android.util.Log;
 
 import java.lang.reflect.Method;
 import java.util.List;
 
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-
-public class MainActivity extends Activity {
-
-    private static final String TAG = "KillAppActivity";
-    private static final String PACKAGENAME = "com.picovr.gallery";
+public class KillAppClass {
+    private static final String TAG = "KillAppClass";
     private static int pid = -1;
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void killAPPClick(View view){
-        killapp(PACKAGENAME);
-    }
-
-    public void killapp(String pkgName) {
-        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+    /**
+     * Kill specific app.
+     * @param pkgName The package name of app to kill. eg: com.picovr.store
+     * @param context Context
+     */
+    public void killApp(String pkgName, Context context) {
+        Log.e(TAG, "killapp: ");
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> mRunningProcess = am.getRunningAppProcesses();
-        Log.e(TAG, mRunningProcess.size() + " ");
+        Log.e(TAG, mRunningProcess.size() + "");
         for (ActivityManager.RunningAppProcessInfo amProcess : mRunningProcess) {
             Log.e(TAG, amProcess.processName);
             Log.e(TAG, "pid:" + amProcess.pid);
@@ -40,11 +29,8 @@ public class MainActivity extends Activity {
                 break;
             }
         }
-
         Log.e(TAG, "picovr.factorytest.cmd" + "kill " + pid);
-
         setSystemProperties("picovr.factorytest.cmd", "kill " + pid);
-
     }
 
     public static void setSystemProperties(String key, String value) {
@@ -53,9 +39,10 @@ public class MainActivity extends Activity {
             final Method set = systemProperties.getMethod("set", String.class,
                     String.class);
             set.invoke(null, key, value);
-//            LogUtils.i("setSystemProperties--->key=" + key + " value=" + value);
+            Log.e(TAG, "setSystemProperties--->key=" + key + " value=" + value);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
