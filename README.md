@@ -1,14 +1,14 @@
 # Killing Specific Process Introduction
 
-JAR file, demo apk are in /resource.
+JAR file, demo apk are in /resource.    
 Note: Regarding java package creation and usage, please refer to [the Guideline](https://github.com/picoxr/support/blob/master/How%20to%20Use%20JAR%20file%20in%20Unity%20project%20on%20Pico%20device.docx)
 
 ## Introduction  
-This demo shows how to kill a specific process
+This demo shows how to kill a specific process.
 
 ## Class Name  
 ```
-android.name="com.picovr.killapplication.KillAppClass"
+com.picovr.killapplication.KillAppClass
 ```
 
 ## Permission 
